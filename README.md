@@ -1,24 +1,7 @@
-# README
+# MDTaufan.com Web Application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the application for my personal website [*MDTaufan.com*](http://www.mdtaufan.com/) using Rails 5.0.0
 
-Things you may want to cover:
+## License
+The source code for this application is available under MIT License. See [LICENSE.md](LICENSE.md) for details.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
