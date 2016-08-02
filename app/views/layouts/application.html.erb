@@ -8,7 +8,9 @@
   </head>
   <body id="page-top" class="index">
   	<%= render "layouts/header" %>
+    <%= render "layouts/flash_message" %>
     <%= yield %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= debug(params) if Rails.env.development? %>
   </body>
 </html>

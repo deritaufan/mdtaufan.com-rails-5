@@ -1,0 +1,5 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+test1:
+  name: Test 1
+  email: test1@example.com
+  message: Test 1 message
