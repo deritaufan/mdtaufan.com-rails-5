@@ -8,25 +8,25 @@
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
         <div id="result"></div>
-        <%= form_tag(contact_path, remote: true, id: "contactForm", novalidate: "novalidate") do %>
+        <%= form_for @contact, url: contact_path, html: { id: "contactForm", novalidate: "novalidate" }, remote: true do |f| %>
             <div class="row control-group">
                 <div class="form-group col-xs-12 floating-label-form-group controls">
                     <label id: "name_label">Name</label>
-                    <%= text_field_tag(:name, nil, class: 'form-control', placeholder: "Name*", data: {:validation => "required", "validation-error-msg" => "Name cannot be empty"}) %>
+                    <%= f.text_field(:name, class: 'form-control', placeholder: "Name*", data: {:validation => "required", "validation-error-msg" => "Name cannot be empty"}) %>
                     <p class="help-block text-danger"></p>
                 </div>
             </div>
             <div class="row control-group">
                 <div class="form-group col-xs-12 floating-label-form-group controls">
                     <label id: "email_label">Email Address</label>
-                    <%= email_field_tag(:email, nil, class: "form-control", placeholder: "Email Address*", data: {:validation => "required email", "validation-error-msg" => "A valid email address is required"}) %>
+                    <%= f.email_field(:email, class: "form-control", placeholder: "Email Address*", data: {:validation => "required email", "validation-error-msg" => "A valid email address is required"}) %>
                     <p class="help-block text-danger"></p>
                 </div>
             </div>
             <div class="row control-group">
                 <div class="form-group col-xs-12 floating-label-form-group controls">
                     <label id: "message_label">Message</label>
-                    <%= text_area_tag(:message, nil, class: "form-control", placeholder: "Message*", rows: 5, data: {:validation => "required", "validation-error-msg" => "Message cannot be empty"}) %>
+                    <%= f.text_area(:message, class: "form-control", placeholder: "Message*", rows: 5, data: {:validation => "required", "validation-error-msg" => "Message cannot be empty"}) %>
                     <p class="help-block text-danger"></p>
                 </div>
             </div>
@@ -34,7 +34,7 @@
             <div id="success"></div>
             <div class="row">
                 <div class="form-group col-xs-12">
-                    <%= button_tag 'Send', class: "btn btn-success btn-lg", data: { disable_with: "<i class='fa fa-spinner fa-spin'></i> Sending..."} %>
+                    <%= f.button 'Send', class: "btn btn-success btn-lg", data: { disable_with: "<i class='fa fa-spinner fa-spin'></i> Sending..."} %>
                 </div>
             </div>
         <% end %>

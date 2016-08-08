@@ -7,7 +7,7 @@ RSpec.describe ContactMailer, type: :mailer do
     am.perform_deliveries = true
     am.deliveries = []
     @contact_form = FactoryGirl.create(:contact)
-    ContactMailer.contact_me(@contact_form.name, @contact_form.email, @contact_form.message).deliver
+    ContactMailer.contact_me(@contact_form).deliver
   end
 
   after(:each) do

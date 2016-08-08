@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.feature "ContactMes", type: :feature do
   scenario "Guest sends a new message", :js => true do
   	visit "/"
-  	fill_in "name", :with => "Guest"
-  	fill_in "email", :with => "guest@example.com"
-  	fill_in "message", :with => "Test message"
+  	fill_in "contact[name]", :with => "Guest"
+  	fill_in "contact[email]", :with => "guest@example.com"
+  	fill_in "contact[message]", :with => "Test message"
   	expect{
   		click_button "Send"
   	}.to change(Contact, :count).by(1)
@@ -14,9 +14,9 @@ RSpec.feature "ContactMes", type: :feature do
 
   scenario "Guest sends a invalid message", :js => true do
   	visit "/"
-  	fill_in "name", :with => ""
-  	fill_in "email", :with => ""
-  	fill_in "message", :with => ""
+  	fill_in "contact[name]", :with => ""
+  	fill_in "contact[email]", :with => ""
+  	fill_in "contact[message]", :with => ""
     expect{
       click_button "Send"
     }.to change(Contact, :count).by(0)
