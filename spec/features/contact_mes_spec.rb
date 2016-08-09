@@ -8,6 +8,7 @@ RSpec.feature "ContactMes", type: :feature do
   	fill_in "contact[message]", :with => "Test message"
   	expect{
   		click_button "Send"
+      wait_for_ajax
   	}.to change(Contact, :count).by(1)
   	expect(page).to have_text("Thank you for your message!")
   end
@@ -19,6 +20,7 @@ RSpec.feature "ContactMes", type: :feature do
   	fill_in "contact[message]", :with => ""
     expect{
       click_button "Send"
+      wait_for_ajax
     }.to change(Contact, :count).by(0)
   	expect(page).to have_text("Name cannot be empty")
   	expect(page).to have_text("A valid email address is required")

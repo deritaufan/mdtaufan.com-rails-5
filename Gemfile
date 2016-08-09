@@ -16,7 +16,6 @@ group :development, :test do
   gem 'byebug',  '9.0.0', platform: :mri
   gem 'rspec-rails', '~> 3.5.1'
   gem 'capybara', '~> 2.7.1'
-  gem 'selenium-webdriver', '2.53.4'
   gem 'factory_girl_rails', '~> 4.7.0'
 end
 
@@ -31,6 +30,7 @@ group :test do
   gem 'rails-controller-testing', '0.1.1'
   gem 'faker', '~> 1.6.6'
   gem 'database_cleaner', '~> 1.5.3'
+  gem 'capybara-webkit', '~> 1.11.1'
 end
 
 group :production do
