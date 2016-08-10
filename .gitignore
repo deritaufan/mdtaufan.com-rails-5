@@ -21,5 +21,6 @@
 .byebug_history
 
 # Ignore Mac OSX .DS_Store
-app/views/.DS_Store
+.DS_Store
+
 
