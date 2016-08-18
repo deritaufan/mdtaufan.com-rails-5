@@ -18,6 +18,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5.1'
   gem 'capybara', '~> 2.7.1'
   gem 'factory_girl_rails', '~> 4.7.0'
+  gem 'faker', '~> 1.6.6'
 end
 
 group :development do
@@ -29,7 +30,6 @@ end
 
 group :test do
   gem 'rails-controller-testing', '0.1.1'
-  gem 'faker', '~> 1.6.6'
   gem 'database_cleaner', '~> 1.5.3'
   gem 'capybara-webkit', '~> 1.11.1'
 end
