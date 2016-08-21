@@ -1,3 +1,53 @@
-<% provide(:title, 'Register new editor') %>
-<h1>Register new editor</h1>
-<p>This will be a signup page for new users.</p>
+<% provide(:title, 'Create new editor') %>
+<section class="admin">
+<div class="container">
+<div class="row">
+    <div class="col-lg-12 text-center">
+        <h2>Create Editor</h2>
+        <div class="horizontal-line"></div>
+    </div>
+</div>
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+    <%= form_for @editor, url: register_path do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+        <div class="row control-group">
+            <div class="form-group col-xs-12 floating-label-form-group controls">
+                <%= f.label :name %>
+                <%= f.text_field(:name, class: 'form-control', placeholder: "Name*") %>
+                <p class="help-block text-danger"></p>
+            </div>
+        </div>
+        <div class="row control-group">
+            <div class="form-group col-xs-12 floating-label-form-group controls">
+                <%= f.label :email %>
+                <%= f.email_field(:email, class: "form-control", placeholder: "Email Address*") %>
+                <p class="help-block text-danger"></p>
+            </div>
+        </div>
+        <div class="row control-group">
+            <div class="form-group col-xs-12 floating-label-form-group controls">
+                <%= f.label :password %>
+                <%= f.password_field(:password, class: "form-control", placeholder: "Password*") %>
+                <p class="help-block text-danger"></p>
+            </div>
+        </div>
+        <div class="row control-group">
+            <div class="form-group col-xs-12 floating-label-form-group controls">
+                <%= f.label :password_confirmation %>
+                <%= f.password_field(:password_confirmation, class: "form-control", placeholder: "Password Confirmation*") %>
+                <p class="help-block text-danger"></p>
+            </div>
+        </div>
+        <br>
+        <div id="success"></div>
+        <div class="row">
+            <div class="form-group col-xs-12">
+                <%= f.submit 'Create Editor', class: "btn btn-success btn-lg" %>
+            </div>
+        </div>
+    <% end %>
+  </div>
+</div>
+</div>
+</section>

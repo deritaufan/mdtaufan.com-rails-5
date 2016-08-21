@@ -57,3 +57,21 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 end
+
+Capybara::Webkit.configure do |config|
+  config.debug = false
+
+  # Silently return an empty 200 response for any requests to unknown URLs.
+  # config.block_unknown_urls
+
+  # Allow pages to make requests to any URL without issuing a warning.
+  # config.allow_unknown_urls
+
+  config.allow_url("fonts.googleapis.com")
+
+  # Timeout if requests take longer than 5 seconds
+  config.timeout = 5
+
+  # Don't raise errors when SSL certificates can't be validated
+  config.ignore_ssl_errors
+end
