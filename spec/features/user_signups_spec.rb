@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "UserSignups", type: :feature do
   scenario "Admin registers new editor with invalid information" do
-  	visit 'editors/new'
+  	visit 'admin/editors/new'
   	fill_in "editor[name]", :with => ""
   	fill_in "editor[email]", :with => "invalid@email"
   	fill_in "editor[password]", :with => "meutia"
@@ -14,8 +14,8 @@ RSpec.feature "UserSignups", type: :feature do
   	expect(page).to have_css("div.field_with_errors")
   end
 
-  scenario "Admin regisers new editor with valid information" do
-  	visit 'editors/new'
+  scenario "Admin registers new editor with valid information" do
+  	visit 'admin/editors/new'
   	name = Faker::Name.name
   	fill_in "editor[name]", :with => name
   	fill_in "editor[email]", :with => Faker::Internet.email

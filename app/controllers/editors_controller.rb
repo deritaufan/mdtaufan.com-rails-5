@@ -1,6 +1,9 @@
 class EditorsController < ApplicationController
 
-	def index
+	def dashboard
+  end
+
+  def index
 	end
   
   def show

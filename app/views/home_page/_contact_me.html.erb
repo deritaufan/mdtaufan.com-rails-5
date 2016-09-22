@@ -13,25 +13,21 @@
                 <div class="form-group col-xs-12 floating-label-form-group controls">
                     <%= f.label :name %>
                     <%= f.text_field(:name, class: 'form-control', placeholder: "Name*", data: {:validation => "required", "validation-error-msg" => "Name cannot be empty"}) %>
-                    <p class="help-block text-danger"></p>
                 </div>
             </div>
             <div class="row control-group">
                 <div class="form-group col-xs-12 floating-label-form-group controls">
                     <%= f.label :email %>
                     <%= f.email_field(:email, class: "form-control", placeholder: "Email Address*", data: {:validation => "required email", "validation-error-msg" => "A valid email address is required"}) %>
-                    <p class="help-block text-danger"></p>
                 </div>
             </div>
             <div class="row control-group">
                 <div class="form-group col-xs-12 floating-label-form-group controls">
                     <%= f.label :message %>
                     <%= f.text_area(:message, class: "form-control", placeholder: "Message*", rows: 5, data: {:validation => "required", "validation-error-msg" => "Message cannot be empty"}) %>
-                    <p class="help-block text-danger"></p>
                 </div>
             </div>
             <br>
-            <div id="success"></div>
             <div class="row">
                 <div class="form-group col-xs-12">
                     <%= f.button 'Send', class: "btn btn-success btn-lg", data: { disable_with: "<i class='fa fa-spinner fa-spin'></i> Sending..."} %>

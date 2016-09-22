@@ -10,8 +10,8 @@
     
   </head>
   <body id="page-top" class="index">
-  	<%= render "header" %>
-    <%= render "flash_message" %>
+  	<%= render_header(yield(:admin_page)) %>
+    <%= render "shared/flash_message" %>
     <%= yield %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= debug(params) if Rails.env.development? %>

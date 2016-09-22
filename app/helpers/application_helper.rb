@@ -7,4 +7,12 @@ module ApplicationHelper
       prefix_title +  " | " + base_title
     end
   end
+
+  def render_header(admin_page = '')
+  	if admin_page.eql? "admin"
+  		render "shared/header_admin"
+  	else
+  		render "shared/header"
+  	end
+  end
 end

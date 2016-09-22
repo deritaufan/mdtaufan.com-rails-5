@@ -1,4 +1,5 @@
 <% provide(:title, 'Create new editor') %>
+<% provide(:admin_page, "admin") %>
 <section class="admin">
 <div class="container">
 <div class="row">
@@ -13,37 +14,32 @@
         <%= render 'shared/error_messages', object: f.object %>
         <div class="row control-group">
             <div class="form-group col-xs-12 floating-label-form-group controls">
-                <%= f.label :name %>
-                <%= f.text_field(:name, class: 'form-control', placeholder: "Name*") %>
-                <p class="help-block text-danger"></p>
+              <%= f.label :name %>
+              <%= f.text_field(:name, class: 'form-control', placeholder: "Name*") %>
             </div>
         </div>
         <div class="row control-group">
             <div class="form-group col-xs-12 floating-label-form-group controls">
-                <%= f.label :email %>
-                <%= f.email_field(:email, class: "form-control", placeholder: "Email Address*") %>
-                <p class="help-block text-danger"></p>
+              <%= f.label :email %>
+              <%= f.email_field(:email, class: "form-control", placeholder: "Email Address*") %>
             </div>
         </div>
         <div class="row control-group">
             <div class="form-group col-xs-12 floating-label-form-group controls">
-                <%= f.label :password %>
-                <%= f.password_field(:password, class: "form-control", placeholder: "Password*") %>
-                <p class="help-block text-danger"></p>
+              <%= f.label :password %>
+              <%= f.password_field(:password, class: "form-control", placeholder: "Password*") %>
             </div>
         </div>
         <div class="row control-group">
             <div class="form-group col-xs-12 floating-label-form-group controls">
-                <%= f.label :password_confirmation %>
-                <%= f.password_field(:password_confirmation, class: "form-control", placeholder: "Password Confirmation*") %>
-                <p class="help-block text-danger"></p>
+              <%= f.label :password_confirmation %>
+              <%= f.password_field(:password_confirmation, class: "form-control", placeholder: "Password Confirmation*") %>
             </div>
         </div>
         <br>
-        <div id="success"></div>
         <div class="row">
             <div class="form-group col-xs-12">
-                <%= f.submit 'Create Editor', class: "btn btn-success btn-lg" %>
+              <%= f.submit 'Create Editor', class: "btn btn-success btn-lg" %>
             </div>
         </div>
     <% end %>
